@@ -42,8 +42,8 @@ class ImageUtils {
     b = b.clamp(0, 255);
 
     return 0xff000000 |
-    ((b << 16) & 0xff0000) |
-    ((g << 8) & 0xff00) |
-    (r & 0xff);
+        ((b << 16) & 0xff0000) |
+        ((g << 8) & 0xff00) |
+        (r & 0xff);
   }
 }

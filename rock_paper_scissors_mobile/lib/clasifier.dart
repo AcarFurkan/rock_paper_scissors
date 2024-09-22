@@ -8,7 +8,7 @@ class Classifier {
   /// Instance of Interpreter
   late Interpreter _interpreter;
 
-  static const String modelFile = "rock_paper_scissors_model.tflite";
+  static const String modelFile = "assets/model_val_acc_0.71.tflite";
 
   /// Loads interpreter from asset
   Future<void> loadModel({Interpreter? interpreter}) async {
@@ -55,6 +55,9 @@ class Classifier {
       (double maxElement, double element) =>
           element > maxElement ? element : maxElement,
     );
+    print(predictionResult.indexOf(maxElement));
+    print(predictionResult);
+
     return DetectionClasses.values[predictionResult.indexOf(maxElement)];
   }
 }
